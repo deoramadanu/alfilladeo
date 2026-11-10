@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alfilla Deo — Portfolio & Press Kit</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080A0F',
+              surface: '#0F121A',
+              card: '#141824',
+              border: '#222938',
+              accent: '#38BDF8'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #080A0F; }
+    ::-webkit-scrollbar-thumb { background: #222938; }
+    ::-webkit-scrollbar-thumb:hover { background: #38BDF8; }
+
+    /* Editorial Hero Overlay Gradient */
+    .hero-editorial-overlay {
+      background: linear-gradient(to bottom, rgba(8, 10, 15, 0.3) 0%, rgba(8, 10, 15, 0.9) 75%, #080A0F 100%);
+    }
+
+    /* Spring Active Nav Indicator */
+    .nav-link.active {
+      color: #38BDF8;
+      font-weight: 700;
+      position: relative;
+    }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #38BDF8;
+      border-radius: 9999px;
+      animation: springBounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    @keyframes springBounce {
+      0% { transform: scaleX(0); }
+      70% { transform: scaleX(1.2); }
+      100% { transform: scaleX(1); }
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-accent selection:text-brand-dark">
+
+  <!-- TOP NAVIGATION BAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/85 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between text-[11px] font-bold tracking-[0.25em] uppercase">
+      
+      <!-- Logo / Inisial -->
+      <a href="#" class="text-white hover:text-brand-accent transition">
+        AD<span class="text-brand-accent">.</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8 text-slate-400">
+        <a href="#about" class="nav-link hover:text-white transition">About</a>
+        <a href="#hobbies" class="nav-link hover:text-white transition">Hobbies</a>
+        <a href="#art" class="nav-link hover:text-white transition">My Art</a>
+        <a href="#contact" class="nav-link hover:text-white transition">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 bg-brand-dark/95 backdrop-blur-lg border-b border-brand-border px-6 py-6 flex flex-col gap-5 text-xs font-bold tracking-widest uppercase z-40">
+      <a href="#about" class="mobile-link text-slate-300 hover:text-brand-accent transition">About</a>
+      <a href="#hobbies" class="mobile-link text-slate-300 hover:text-brand-accent transition">Hobbies</a>
+      <a href="#art" class="mobile-link text-slate-300 hover:text-brand-accent transition">My Art</a>
+      <a href="#contact" class="mobile-link text-brand-accent transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION WITH PERMANENT VIDEO BACKGROUND -->
+  <header class="relative min-h-screen sm:min-h-[90vh] flex flex-col justify-end pt-32 pb-16 px-5 sm:px-8 max-w-6xl mx-auto overflow-hidden">
+    
+    <!-- Background Video Menetap -->
+    <div class="absolute inset-0 z-0">
+      <video class="w-full h-full object-cover filter grayscale contrast-125 opacity-40" autoplay loop muted playsinline>
+        <source src="c:\Users\L O Q\Downloads\profil video.MOV" type="video/mp4">
+        Browser kamu tidak mendukung tag video.
+      </video>
+      <div class="absolute inset-0 hero-editorial-overlay"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8">
+      
+      <!-- Nama & Tagline -->
+      <div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-4 italic">
+          Alfilla Deo
+        </h1>
+        <p class="text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-slate-400 font-medium leading-relaxed">
+          IT Student & Developer — Yogyakarta, Indonesia
+        </p>
+      </div>
+
+      <!-- Quick Links Header -->
+      <div class="flex items-center gap-6 text-[10px] font-bold tracking-[0.2em] uppercase pt-2 md:pt-0">
+        <a href="#hobbies" class="text-white hover:text-brand-accent transition border-b border-white/40 pb-1">Explore Hobbies</a>
+        <a href="#contact" class="text-slate-400 hover:text-white transition border-b border-transparent pb-1">Contact</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-16 sm:py-24 border-t border-brand-border/60 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      
+      <h2 class="text-xl sm:text-2xl font-black uppercase tracking-[0.2em] text-white mb-8 sm:mb-12">About</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
+        
+        <!-- Foto Profil Kecil -->
+        <div class="lg:col-span-4 max-w-sm mx-auto lg:max-w-none w-full">
+          <div class="relative group aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden">
+            <img id="about-img" src="c:\Users\L O Q\Downloads\yoi.jpeg" alt="Alfilla Deo Portrait" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition duration-700">
+            
+            <label for="upload-input" class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 cursor-pointer text-center p-4">
+              <i data-lucide="camera" class="w-8 h-8 text-brand-accent mb-2"></i>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-white">Ganti Foto Profil</span>
+            </label>
+            <input type="file" id="upload-input" accept="image/*" class="hidden" />
+          </div>
+        </div>
+
+        <!-- Paragraf Deskripsi -->
+        <div class="lg:col-span-8 flex flex-col justify-between h-full">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-xs leading-relaxed text-slate-400 font-light mb-8 sm:mb-12">
+            <p>
+              My name is Alfilla Deo Ramadanu, an IT student based in Yogyakarta. Beyond writing clean code and structuring applications, I channel my creativity into music and open roads.
+            </p>
+            <p>
+              Whether I'm laying down tracks on electronic drums and guitar, or cruising the scenic routes around Jogja on two wheels, I believe balance fuels better problem-solving in software development.
+            </p>
+          </div>
+
+          <div class="pt-6 sm:pt-8 border-t border-brand-border/40">
+            <h3 class="text-base sm:text-lg font-bold uppercase tracking-wider text-white mb-2">
+              Logic meets rhythm, code meets the road.
+            </h3>
+            <p class="text-[10px] sm:text-[11px] text-slate-500 tracking-widest uppercase">
+              Open for tech collaborations, musical jams, and creative discussions.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOBBIES SECTION -->
+  <section id="hobbies" class="py-16 sm:py-24 border-t border-brand-border/60 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      
+      <div class="flex items-end justify-between mb-8 sm:mb-12">
+        <h2 class="text-xl sm:text-2xl font-black uppercase tracking-[0.2em] text-white">Hobbies & Passions</h2>
+      </div>
+
+      <p class="text-[10px] sm:text-[11px] tracking-widest uppercase text-slate-500 mb-8 font-mono">
+        When I'm away from the IDE and compiler, you'll find me behind instruments or exploring open routes.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Hobi 1 -->
+        <div class="group aspect-[4/3] sm:aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden relative cursor-pointer">
+          <img src="c:\Users\L O Q\Downloads\IMG_8876.JPG.jpeg" alt="Playing Music" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Hobi 2 -->
+        <div class="group aspect-[4/3] sm:aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden relative cursor-pointer">
+          <img src="c:\Users\L O Q\Downloads\2.jpeg" alt="Riding Motorcycle" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Hobi 3 -->
+        <div class="group aspect-[4/3] sm:aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden relative cursor-pointer">
+          <img src="c:\Users\L O Q\Downloads\3.jpeg" alt="Traveling Jogja" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Hobi 4 -->
+        <div class="group aspect-[4/3] sm:aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden relative cursor-pointer">
+          <img src="c:\Users\L O Q\Downloads\4.jpeg" alt="Lifestyle Gear" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition duration-500">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MY ART SECTION -->
+  <section id="art" class="py-16 sm:py-24 border-t border-brand-border/60 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+        
+        <!-- Bagian Gambar / Galeri Seni -->
+        <div class="lg:col-span-5">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-[0.2em] text-white mb-6">My Art</h2>
+          
+          <!-- Kotak Gambar Karya Seni -->
+          <div class="relative group aspect-[4/3] bg-brand-card border border-brand-border overflow-hidden">
+            <img id="art-img" src="c:\Users\L O Q\Downloads\ok.jpeg" alt="Alfilla Deo Art - Kurt Cobain" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition duration-700">
+            
+            <!-- Tombol Upload untuk ganti gambar karya seni langsung di browser -->
+            <label for="art-upload-input" class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 cursor-pointer text-center p-4">
+              <i data-lucide="image" class="w-8 h-8 text-brand-accent mb-2"></i>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-white">Ganti Gambar Karya</span>
+            </label>
+            <input type="file" id="art-upload-input" accept="image/*" class="hidden" />
+          </div>
+        </div>
+
+        <!-- Bagian Deskripsi / Narasi Karya Seni -->
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <div class="border-l-2 border-brand-accent pl-6 py-2 mb-6">
+            <h3 class="text-base sm:text-lg font-bold uppercase tracking-widest text-white mb-2">The Sound of Lines & Ink</h3>
+            <p class="text-[10px] sm:text-[11px] text-brand-accent tracking-widest uppercase font-mono">Portraiture & Musical Influence</p>
+          </div>
+          
+          <div class="space-y-4 text-xs text-slate-400 font-light leading-relaxed">
+            <p>
+              Art has always been an extension of the sound I carry inside. Back in junior high school, that passion translated into drawing a portrait of Kurt Cobain—driven by a deep connection to his music, raw energy, and counter-culture spirit.
+            </p>
+            <p>
+              What started as capturing an idol on paper evolved into a lifelong appreciation for visual expression. Whether I'm writing clean logic in an IDE or sketching monochrome portraits, every stroke is fueled by the same rhythm and authenticity.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-16 sm:py-24 border-t border-brand-border/60 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <h2 class="text-xl sm:text-2xl font-black uppercase tracking-[0.2em] text-white mb-8 sm:mb-12">Contact</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12">
+        
+        <!-- Informasi Kontak Ringkas -->
+        <div class="lg:col-span-5 flex flex-col justify-between text-xs font-mono text-slate-400 leading-relaxed gap-6">
+          <div>
+            <p class="text-white font-bold mb-3 uppercase tracking-widest">Yogyakarta, Indonesia</p>
+            <a href="mailto:deo121005@gmail.com" class="text-brand-accent hover:underline tracking-wider block break-all">
+              deo121005@gmail.com
+            </a>
+          </div>
+
+<!-- Social Icons (GitHub, Instagram, Mail) -->
+<div class="flex items-center gap-5 text-white">
+  <!-- Github -->
+  <a href="https://github.com/deoramadanu" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/alfilladeo" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+  </a>
+
+  <!-- Mail -->
+  <a href="mailto:deo121005@gmail.com" class="hover:text-brand-accent transition">
+    <i data-lucide="mail" class="w-5 h-5"></i>
+  </a>
+</div>
+
+        <!-- Form Kontak -->
+        <div class="lg:col-span-7 bg-brand-card border border-brand-border p-6 sm:p-8">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Let's Get Connected!</p>
+          <form onsubmit="event.preventDefault();" class="flex flex-col gap-4 text-xs">
+            <div>
+              <input type="text" placeholder="YOUR NAME" class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider" />
+            </div>
+            <div>
+              <input type="text" placeholder="YOUR PHONE" class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider" />
+            </div>
+            <div>
+              <input type="email" placeholder="YOUR EMAIL" class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider" />
+            </div>
+            <div>
+              <textarea rows="4" placeholder="MESSAGE..." class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider"></textarea>
+            </div>
+            <button type="submit" class="w-full py-4 bg-brand-accent text-brand-dark font-bold uppercase tracking-[0.2em] hover:bg-sky-300 transition duration-300">
+              Submit
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-brand-border/60 text-center text-slate-500 text-[10px] tracking-[0.25em] uppercase">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-white font-bold">ALFILLA DEO</p>
+      <div class="flex items-center gap-6">
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#hobbies" class="hover:text-white transition">Hobbies</a>
+        <a href="#art" class="hover:text-white transition">My Art</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </div>
+      <p>&copy; 2026 AD. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Upload Preview Foto Profil About
+    const uploadInput = document.getElementById('upload-input');
+    const aboutImg = document.getElementById('about-img');
+
+    if (uploadInput && aboutImg) {
+      uploadInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            aboutImg.src = event.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+
+    // Upload Preview untuk My Art
+    const artUploadInput = document.getElementById('art-upload-input');
+    const artImg = document.getElementById('art-img');
+
+    if (artUploadInput && artImg) {
+      artUploadInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            artImg.src = event.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+
+    // ScrollSpy Active Link Highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 140;
+        const sectionHeight = section.offsetHeight;
+        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
