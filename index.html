@@ -104,37 +104,48 @@
       <a href="#contact" class="mobile-link text-brand-accent transition">Contact</a>
     </div>
   </nav>
-
-  <!-- HERO SECTION WITH PERMANENT VIDEO BACKGROUND -->
-  <header class="relative min-h-screen sm:min-h-[90vh] flex flex-col justify-end pt-32 pb-16 px-5 sm:px-8 max-w-6xl mx-auto overflow-hidden">
+<!-- HERO SECTION LANDSCAPE / MENYAMPING -->
+  <header class="pt-24 pb-8 px-5 sm:px-8 max-w-6xl mx-auto">
     
-    <!-- Background Video Menetap -->
-    <div class="absolute inset-0 z-0">
-      <video class="w-full h-full object-cover filter grayscale contrast-125 opacity-40" autoplay loop muted playsinline>
-        <source src="images/profil oke.mov" type="video/mp4" type="video/mp4">
-        Browser kamu tidak mendukung tag video.
-      </video>
-      <div class="absolute inset-0 hero-editorial-overlay"></div>
+    <!-- Container Video Menyamping (Lanskap) -->
+    <div class="relative w-full aspect-[16/9] sm:aspect-[21/9] max-h-[60vh] bg-brand-card border border-brand-border rounded-xl overflow-hidden flex flex-col justify-end p-6 sm:p-10">
+      
+      <!-- Background Video -->
+      <div class="absolute inset-0 z-0">
+        <video class="w-full h-full object-cover filter grayscale contrast-125 opacity-40" autoplay loop muted playsinline webkit-playsinline>
+          <source src="images/profil oke.mov" type="video/mp4">
+          Browser kamu tidak mendukung tag video.
+        </video>
+        <div class="absolute inset-0 hero-editorial-overlay"></div>
+      </div>
+
+      <!-- Konten Nama & Tagline di Dalam Frame Video Lanskap -->
+      <div class="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8">
+        
+        <!-- Nama & Tagline -->
+        <div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-3 italic">
+            Alfilla Deo
+          </h1>
+          <p class="text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-slate-400 font-medium leading-relaxed">
+            IT Student & Developer — Yogyakarta, Indonesia
+          </p>
+        </div>
+
+        <!-- Quick Links Header -->
+        <div class="flex items-center gap-6 text-[10px] font-bold tracking-[0.2em] uppercase pt-2 md:pt-0">
+          <a href="#hobbies" class="text-white hover:text-brand-accent transition border-b border-white/40 pb-1">Explore Hobbies</a>
+          <a href="#contact" class="text-slate-400 hover:text-white transition border-b border-transparent pb-1">Contact</a>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8">
-      
-      <!-- Nama & Tagline -->
-      <div>
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-4 italic">
-          Alfilla Deo
-        </h1>
-        <p class="text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-slate-400 font-medium leading-relaxed">
-          IT Student & Developer — Yogyakarta, Indonesia
-        </p>
-      </div>
+  </header>
 
-      <!-- Quick Links Header -->
-      <div class="flex items-center gap-6 text-[10px] font-bold tracking-[0.2em] uppercase pt-2 md:pt-0">
-        <a href="#hobbies" class="text-white hover:text-brand-accent transition border-b border-white/40 pb-1">Explore Hobbies</a>
-        <a href="#contact" class="text-slate-400 hover:text-white transition border-b border-transparent pb-1">Contact</a>
-      </div>
-
+  </header>
+  </header>
     </div>
   </header>
 
@@ -149,7 +160,7 @@
         <!-- Foto Profil Statis (Tombol Ganti Foto Dinonaktifkan) -->
         <div class="lg:col-span-4 max-w-sm mx-auto lg:max-w-none w-full">
           <div class="relative aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden">
-            <img id="about-img" src="images/yoi.jpeg" alt="Alfilla Deo Portrait" class="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition duration-700">
+            <img id="about-img" src="images/about.jpeg" alt="Alfilla Deo Portrait" class="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition duration-700">
           </div>
         </div>
 
