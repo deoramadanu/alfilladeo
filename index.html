@@ -138,7 +138,7 @@
     </div>
   </header>
 
-  <!-- ABOUT SECTION -->
+<!-- ABOUT SECTION -->
   <section id="about" class="py-16 sm:py-24 border-t border-brand-border/60 scroll-mt-20">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
       
@@ -146,16 +146,10 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
         
-        <!-- Foto Profil Kecil -->
+        <!-- Foto Profil Statis (Tombol Ganti Foto Dinonaktifkan) -->
         <div class="lg:col-span-4 max-w-sm mx-auto lg:max-w-none w-full">
-          <div class="relative group aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden">
-            <img id="about-img" src="images/yoi.jpeg" alt="Alfilla Deo Portrait" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition duration-700">
-            
-            <label for="upload-input" class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 cursor-pointer text-center p-4">
-              <i data-lucide="camera" class="w-8 h-8 text-brand-accent mb-2"></i>
-              <span class="text-[10px] font-bold uppercase tracking-widest text-white">Ganti Foto Profil</span>
-            </label>
-            <input type="file" id="upload-input" accept="image/*" class="hidden" />
+          <div class="relative aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden">
+            <img id="about-img" src="images/yoi.jpeg" alt="Alfilla Deo Portrait" class="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition duration-700">
           </div>
         </div>
 
@@ -222,25 +216,18 @@
     </div>
   </section>
 
-  <!-- MY ART SECTION -->
+<!-- MY ART SECTION -->
   <section id="art" class="py-16 sm:py-24 border-t border-brand-border/60 scroll-mt-20">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
         
-        <!-- Bagian Gambar / Galeri Seni -->
+        <!-- Bagian Gambar / Galeri Seni (Statis) -->
         <div class="lg:col-span-5">
           <h2 class="text-xl sm:text-2xl font-black uppercase tracking-[0.2em] text-white mb-6">My Art</h2>
           
           <!-- Kotak Gambar Karya Seni -->
-          <div class="relative group aspect-[4/3] bg-brand-card border border-brand-border overflow-hidden">
-            <img id="art-img" src="images/ok.jpeg" alt="Alfilla Deo Art - Kurt Cobain" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition duration-700">
-            
-            <!-- Tombol Upload untuk ganti gambar karya seni langsung di browser -->
-            <label for="art-upload-input" class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 cursor-pointer text-center p-4">
-              <i data-lucide="image" class="w-8 h-8 text-brand-accent mb-2"></i>
-              <span class="text-[10px] font-bold uppercase tracking-widest text-white">Ganti Gambar Karya</span>
-            </label>
-            <input type="file" id="art-upload-input" accept="image/*" class="hidden" />
+          <div class="relative aspect-[4/3] bg-brand-card border border-brand-border overflow-hidden">
+            <img id="art-img" src="images/ok.jpeg" alt="Alfilla Deo Art - Kurt Cobain" class="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition duration-700">
           </div>
         </div>
 
@@ -299,30 +286,30 @@
 </div>
 
         <!-- Form Kontak -->
-        <div class="lg:col-span-7 bg-brand-card border border-brand-border p-6 sm:p-8">
-          <p class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Let's Get Connected!</p>
-          <form onsubmit="event.preventDefault();" class="flex flex-col gap-4 text-xs">
-            <div>
-              <input type="text" placeholder="YOUR NAME" class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider" />
-            </div>
-            <div>
-              <input type="text" placeholder="YOUR PHONE" class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider" />
-            </div>
-            <div>
-              <input type="email" placeholder="YOUR EMAIL" class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider" />
-            </div>
-            <div>
-              <textarea rows="4" placeholder="MESSAGE..." class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider"></textarea>
-            </div>
-            <button type="submit" class="w-full py-4 bg-brand-accent text-brand-dark font-bold uppercase tracking-[0.2em] hover:bg-sky-300 transition duration-300">
-              Submit
-            </button>
-          </form>
-        </div>
+        <form action="https://formsubmit.co/deo121005@gmail.com" method="POST" class="flex flex-col gap-4 text-xs">
+  
+  <!-- Konfigurasi tambahan agar tidak perlu buka halaman captcha bawaan FormSubmit -->
+  <input type="hidden" name="_captcha" value="false">
+  
+  <!-- (Opsional) Redirect kembali ke websitemu setelah pesan terkirim -->
+  <input type="hidden" name="_next" value="https://alfilladeo.my.id">
 
-      </div>
-    </div>
-  </section>
+  <div>
+    <input type="text" name="name" placeholder="YOUR NAME" required class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider" />
+  </div>
+  <div>
+    <input type="text" name="phone" placeholder="YOUR PHONE" class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider" />
+  </div>
+  <div>
+    <input type="email" name="email" placeholder="YOUR EMAIL" required class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider" />
+  </div>
+  <div>
+    <textarea name="message" rows="4" placeholder="MESSAGE..." required class="w-full bg-brand-dark border border-brand-border p-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand-accent transition tracking-wider"></textarea>
+  </div>
+  <button type="submit" class="w-full py-4 bg-brand-accent text-brand-dark font-bold uppercase tracking-[0.2em] hover:bg-sky-300 transition duration-300">
+    Submit
+  </button>
+</form>
 
   <!-- FOOTER -->
   <footer class="py-12 border-t border-brand-border/60 text-center text-slate-500 text-[10px] tracking-[0.25em] uppercase">
